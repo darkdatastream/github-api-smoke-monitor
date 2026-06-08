@@ -1,0 +1,36 @@
+name: API Smoke Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  api-smoke-tests:
+    name: Run GitHub API smoke tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Check Bash syntax
+        run: bash -n run_tests.sh
+
+      - name: Run API smoke tests
+        run: ./run_tests.sh | tee sample-test-output.txt
+
+      - name: Upload test output
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-smoke-test-output
+          path: sample-test-output.txt
