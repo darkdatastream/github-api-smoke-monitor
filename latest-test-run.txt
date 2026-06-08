@@ -1,0 +1,21 @@
+=== GitHub API Smoke Monitor ===
+
+Testing existing repository: darkdatastream/nyc-yellow-taxi-cleanup
+
+PASS: existing repository returned HTTP 200
+PASS: repo name is nyc-yellow-taxi-cleanup
+PASS: full_name is darkdatastream/nyc-yellow-taxi-cleanup
+PASS: repository is public
+PASS: default_branch exists: main
+PASS: rate limit header exists: x-ratelimit-limit=60
+PASS: rate remaining header exists: x-ratelimit-remaining=55
+
+Testing missing repository negative case
+
+PASS: missing repository returned HTTP 404
+PASS: missing repository response message is Not Found
+
+=== Summary ===
+Passed: 9
+Failed: 0
+RESULT: ALL TESTS PASSED
