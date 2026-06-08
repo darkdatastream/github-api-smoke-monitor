@@ -1,5 +1,7 @@
 # GitHub API Smoke Monitor
 
+[![API Smoke Tests](https://github.com/darkdatastream/github-api-smoke-monitor/actions/workflows/api-smoke-tests.yml/badge.svg)](https://github.com/darkdatastream/github-api-smoke-monitor/actions/workflows/api-smoke-tests.yml)
+
 A lightweight API smoke test project using Bash, curl and jq.
 
 This project validates real GitHub REST API responses for a public repository.
